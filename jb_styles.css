@@ -22,14 +22,19 @@
 
 */
 html {
+    /* Sets the background image to jb_back3.png */
     background: url('jb_back3.png');
 }
 
 body {
+    /* Sets the background color to white. */
     background-color: white;
+    /* Sets the max and minimum width of the body. */
     min-width: 320px;
     max-width: 1024px;
+    /* Set the width to 100% */
     width: 100%;
+    /* Centers the body. */
     margin: 0px auto;
 }
 
@@ -39,34 +44,49 @@ body {
 
 */
 nav {
+    /* Width of 100% so it covers the entire page. */
     width: 100%;
+    /* Sets the display to block */
     display: block;
 }
 
+/* All uls with a class of mainmenu */
 ul.mainmenu {
+    /* Resets the margin and padding */
     margin: 0;
     padding: 0;
+    /* Sets the background color */
     background-color: rgb(0, 153, 255);
 }
 
-ul.mainmenu > li:hover{
+/* When one of the categories are hovered over */
+ul.mainmenu>li:hover {
     background-color: rgb(12, 149, 240);
 }
 
+/* All uls with a class of submenu */
 ul.submenu {
+    /* Hides the sub menu */
     display: none;
+    /* Removes the bullet points */
     list-style-type: none;
+    /* Sets the background color */
     background-color: rgb(12, 149, 240);
+    /* Resets the padding to 0 */
     padding: 0;
+    /* Centers the text in the menu */
     text-align: center;
 }
 
 ul.submenu li {
+    /* Sets the padding of the lists to 3 on the top and 2 on the bottom. */
     padding: 3px 0px 2px 0px;
 }
 
 ul.submenu li a {
+    /* Sets the text color to white */
     color: white;
+    /* Removes the underline */
     text-decoration: none;
 }
 
@@ -75,15 +95,20 @@ ul.submenu li:hover {
     background-color: rgb(34, 121, 179);
 }
 
+/* Sets the submenu display to block so that it shows. The + mean ul is directly after the .submenuTitle */
 a.submenuTitle:hover+ul.submenu,
 ul.submenu:hover {
     display: block;
 }
 
 header nav>ul>li>a {
+    /* Sets the display to block */
     display: block;
+    /* Removes the underline */
     text-decoration: none;
+    /* Sets the text color to white. */
     color: white;
+    /* Centers the text */
     text-align: center;
 }
 
@@ -93,14 +118,23 @@ header nav>ul>li {
     padding: 10px;
 }
 
+/* Adds in content after the title */
+a.submenuTitle:link::after {
+    /* \25BE is the down arrow in utf-8 */
+    content: " \25BE"
+}
+
 /* 
     Main Article Styles
+    (The paragraphs)
 */
 main p {
+    /* Sets the indent of the text to one em. */
     text-indent: 1em;
 }
 
 main img {
+    /* Centers the image in the main section. */
     display: block;
     width: 70%;
     margin: auto;
@@ -111,10 +145,17 @@ main img {
 */
 aside dt {
     text-align: center;
+    /* Sets the font size to 1.3 em */
     font-size: 1.3em;
+    /* Sets the padding top and bottom */
     padding-top: 10px;
     padding-bottom: 2px;
+    /* Sets the bottom of the border to act as an hr. */
     border-bottom: 2px solid black;
+}
+
+h2 {
+    text-align: center;
 }
 
 
@@ -126,8 +167,10 @@ aside dt {
 */
 
 body {
+    /* Sets the body display to flex while using progressive enhancement. */
     display: -webkit-flex;
     display: flex;
+    /* Sets the flex-flow to row and wrap. */
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
 }
@@ -138,23 +181,27 @@ footer {
 }
 
 main {
+    /* Sets the flex of the main to a shrink scale of 3 and a base size of 400 pixels. */
     -webkit-flex: 1 3 400px;
     flex: 1 3 400px;
     padding: 10px;
 }
 
 aside {
+    /* Sets the flex grow and shrink to 1:1 and the base size to 200px */
     -webkit-flex: 1 1 200px;
     flex: 1 1 200px;
     padding: 10px;
 }
 
 header img {
+    /* Centers the header image. */
     display: block;
     margin: auto;
 }
 
 a#navicon {
+    /* Makes the #navicon hide by default. */
     display: none;
 }
 
@@ -163,21 +210,26 @@ a#navicon {
     Footer Styles
 
 */
-footer{
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-    width: 95%;
-    margin: auto;
-}
-section{
+
+
+section {
+    /*  */
     flex: 1 300px;
 }
-section:nth-of-type(1){
-    margin-left: 30px;
+
+footer {
+    background-color: darkgray;
+    color: white;
+    margin: 0px;
+}
+
+footer p a {
+    color: white;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    color: gray;
 }
 
 
@@ -186,7 +238,7 @@ section:nth-of-type(1){
     Media Queries
 
 */
-
+/* Mobile Styles */
 @media only screen and (max-width: 480px) {
 
     ul.mainmenu li {
@@ -198,6 +250,7 @@ section:nth-of-type(1){
     }
 
     footer {
+        /* Sets the order of the footer to 100 so it will always be on the bottom (using progresive enhancement) */
         -webkit-order: 100;
         order: 100;
     }
@@ -206,6 +259,7 @@ section:nth-of-type(1){
         display: none;
     }
 
+    /* Shows the #navicon */
     a#navicon {
         display: block;
     }
@@ -219,35 +273,71 @@ section:nth-of-type(1){
         display: block;
     }
 
-    nav{
+    nav {
         background-color: rgb(0, 153, 255);
     }
+
+    footer p {
+        text-align: center;
+    }
+
+    footer a::after {
+        /* Adds (Press) to the end of the footer links. */
+        content: " (Press)";
+    }
+
+    footer section {
+        /* Sets the bottom border to act as an hr */
+        border-bottom: 1px solid black;
+        margin-left: 0px;
+    }
+
+
 }
 
+/* Computer Styles */
 @media only screen and (min-width: 481px) {
-    /* body {
-        width: 75%;
-        min-width: 550px;
-        margin: auto;
-    } */
 
     ul.mainmenu {
-        /* What a pain this is. */
+        /* Sets the navigation bar to use flex. */
         display: -webkit-flex;
         display: flex;
+        /* Sets the navigation to be a row with no wrapping. */
         -webkit-flex-flow: row nowrap;
         flex-flow: row nowrap;
+        /* Removes the bullet points */
         list-style-type: none;
         width: 100%;
+        /* Evenly spaces the navbar items. */
         -webkit-justify-content: space-evenly;
         justify-content: space-evenly;
     }
 
     ul.submenu {
+        /* Adds in a box shadow show it looks better */
         box-shadow: rgb(51, 51, 51) 4px 4px 10px;
+        /* Absolute so it can be moved above items. */
         position: absolute;
         width: 15%;
+        /* Sets the margins to keep borders in mind. */
         box-sizing: border-box;
+        /* Sets a min width so it doesn't get smaller than 200 pixels. */
         min-width: 200px;
+    }
+
+    footer {
+        /* Centers the footer */
+        width: 100%;
+        margin: auto;
+        /* Sets the display of the footer to grid */
+        display: grid;
+        /* Sets the rows and columns in the grid */
+        grid-template-rows: auto;
+        grid-template-columns: auto auto auto;
+    }
+
+    footer p {
+        /* Sets the left margin for the paragraphs. */
+        margin-left: 20px;
     }
 }

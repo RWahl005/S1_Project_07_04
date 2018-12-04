@@ -16,21 +16,30 @@
 
       <title>Jersey Buoys Surfing School</title>
       <meta charset="utf-8" />
+      <!-- Sets the initial scale -->
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <!-- Sets the stylesheets used. The media="print" means only the printer renders that. -->
       <link rel="stylesheet" href="jb_styles.css">
+      <link rel="stylesheet" href="jb_printstyles.css" media="print">
 </head>
 
 <body>
       <header>
+            <!-- The logo -->
             <img src="jb_logo.png" alt="">
+            <!-- The primary navigation bar -->
             <nav>
+                  <!-- The navigation icon for mobile phones. -->
                   <a href="#" id="navicon"><img src="jb_navicon.png"></a>
+                  <!-- The main ul with a class of mainmenu -->
                   <ul class="mainmenu">
                         <li>
                               <a href="index.html">Home</a>
                         </li>
                         <li>
+                              <!-- The submenu title -->
                               <a href="#" class="submenuTitle">Classes</a>
+                              <!-- The sub menu. -->
                               <ul class="submenu">
                                     <li><a href="#">Intro Surfing</a></li>
                                     <li><a href="#">Surfing I</a></li>
@@ -96,7 +105,9 @@
       </header>
       <!-- The main content -->
       <main>
-            <img src="jb_image02.png" alt="" style="width: 70%;">
+            <!-- The main image. -->
+            <img src="jb_image02.png" alt="">
+            <!-- The paragraphs -->
             <p>
                   Come enjoy the excitement of riding the waves along the Jersey Shore with Jersey Buoys.
                   Our nationally-accredited school brings its 22 years of experience in helping you become
@@ -123,8 +134,11 @@
       <!-- The surfer slang. -->
       <aside>
             <h2>Surfer Slang</h2>
+            <!-- A definition list -->
             <dl>
+                  <!-- Definiton term -->
                   <dt>Barney</dt>
+                  <!-- Definition definiton -->
                   <dd>A new and inexperience surfer</dd>
 
                   <dt>Boost</dt>
@@ -155,25 +169,29 @@
       </aside>
       <!-- The owner information -->
       <footer>
+            <!-- Section elements group what text should go togeather. -->
             <section>
-                        <p>
-                                    Jersey Buoys
-                              </p>
-                              <p>
-                                    Owner: Tony Gallo
-                              </p>
+                  <p>
+                        Jersey Buoys
+                  </p>
+                  <p>
+                        Owner: Tony Gallo
+                  </p>
             </section>
 
             <section>
-                        <p>MAILING ADDRESS</p>
+                  <p>MAILING ADDRESS</p>
+                  <!-- The address for the page -->
+                  <address>
                         <p>141 Hodad Drive</p>
                         <p>Ocean City, NJ 08226</p>
+                  </address>
             </section>
 
             <section>
-                        <p>(609) 555-7873</p>
+                  <p><a href="tel:+16095557873">(609) 555-7873</a></p>
 
-                        <p>gall@example.com/surf</p>
+                  <p><a href="mailto:gall@example.com/surf">gall@example.com/surf</a></p>
             </section>
       </footer>
 
